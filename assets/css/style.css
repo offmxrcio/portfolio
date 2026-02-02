@@ -1,0 +1,200 @@
+/* ===========================
+   VARIÁVEIS
+=========================== */
+:root {
+  --bg-main: #020617;
+  --bg-secondary: #000000;
+  --title-color: #ffffff;
+  --text-color: #e5e7eb;
+  --blue: #1e90ff;
+}
+
+body.light {
+  --bg-main: #f8fafc;
+  --bg-secondary: #e5e7eb;
+  --title-color: #020617;
+  --text-color: #020617;
+}
+
+/* ===========================
+   BASE
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(at top left, rgba(30, 144, 255, 0.18), transparent 60%),
+    radial-gradient(at bottom right, rgba(0, 70, 140, 0.25), transparent 55%),
+    linear-gradient(180deg, var(--bg-main), var(--bg-secondary));
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ===========================
+   THEME TOGGLE
+=========================== */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* ===========================
+   TIPOGRAFIA
+=========================== */
+h1, h2, h3 {
+  color: var(--title-color);
+}
+
+/* ===========================
+   HEADER
+=========================== */
+.header {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2.6rem;
+  color: var(--blue);
+}
+
+/* ===========================
+   SEÇÕES
+=========================== */
+.section {
+  padding: 80px 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.section:hover {
+  transform: translateY(-6px);
+}
+
+/* ===========================
+   SCROLL REVEAL
+=========================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===========================
+   PROJECT CARD
+=========================== */
+.project-card {
+  position: relative;
+  margin-top: 24px;
+  padding: 24px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--x) var(--y),
+    rgba(30, 144, 255, 0.25),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+/* ===========================
+   CONTATO
+=========================== */
+.contact-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.contact-title::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  margin: 14px auto 0;
+  display: block;
+  background-color: var(--blue);
+}
+
+/* ===========================
+   SOCIAL ICONS + TOOLTIP
+=========================== */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.social-icons a {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icons img {
+  width: 22px;
+  filter: invert(1);
+}
+
+.social-icons a::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -36px;
+  background: var(--bg-main);
+  color: var(--title-color);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.social-icons a:hover::after {
+  opacity: 1;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+.footer {
+  text-align: center;
+  padding: 30px;
+}
