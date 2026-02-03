@@ -13,8 +13,8 @@ window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
 
 /* MOUSE TRACKING NOS CARDS */
-document.querySelectorAll(".project-card").forEach(card => {
-  card.addEventListener("mousemove", e => {
+document.querySelectorAll(".project-card, .about-card, .about-tecnology, .about-anything")
+    .forEach(card => {card.addEventListener("mousemove", e => {
     const rect = card.getBoundingClientRect();
     card.style.setProperty("--x", `${e.clientX - rect.left}px`);
     card.style.setProperty("--y", `${e.clientY - rect.top}px`);

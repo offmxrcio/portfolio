@@ -45,10 +45,9 @@ body {
   top: 20px;
   right: 20px;
   background: none;
-  border: 1px solid var(--blue);
+  border: none;
   color: var(--blue);
   padding: 10px;
-  border-radius: 50%;
   cursor: pointer;
   z-index: 1000;
 }
@@ -78,11 +77,6 @@ h1, h2, h3 {
 =========================== */
 .section {
   padding: 80px 20px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.section:hover {
-  transform: translateY(-6px);
 }
 
 /* ===========================
@@ -92,6 +86,7 @@ h1, h2, h3 {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  text-align: center;
 }
 
 .reveal.active {
@@ -100,35 +95,97 @@ h1, h2, h3 {
 }
 
 /* ===========================
-   PROJECT CARD
+   CARD BASE (IMPORTANTE)
 =========================== */
-.project-card {
+.card {
   position: relative;
-  margin-top: 24px;
-  padding: 24px;
+  overflow: hidden;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  overflow: hidden;
 }
 
-.project-card::before {
+/* EFEITO DE LUZ NO MOUSE */
+.card::before {
   content: "";
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    circle at var(--x) var(--y),
+    250px circle at var(--x) var(--y),
     rgba(30, 144, 255, 0.25),
-    transparent 40%
+    transparent 60%
   );
   opacity: 0;
   transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
-.project-card:hover::before {
+.card:hover::before {
   opacity: 1;
 }
+
+/* ===========================
+   ABOUT / TECNOLOGY / ANYTHING
+=========================== */
+.about-container {
+  display: flex;
+  gap: 24px;
+}
+
+.about-card,
+.about-tecnology,
+.about-anything {
+  flex: 1;
+  padding: 24px 50px;
+}
+
+.about-card h2,
+.about-tecnology h2,
+.about-anything h2 {
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-card,
+  .about-tecnology,
+  .about-anything {
+    padding: 24px;
+  }
+}
+
+.about-tecnology ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 24px;
+  list-style-position: inside;
+  padding: 0;
+  margin-top: 16px;
+}
+
+.about-tecnology li {
+  text-align: left;
+}
+
+/* ===========================
+   PROJECT CARD
+=========================== */
+.project-card {
+  margin-top: 24px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 200px;
+}
+
+.project-logo {
+  width: 140px;      
+  height: auto;      
+  margin-top: 20px;
+}
+
 
 /* ===========================
    CONTATO
@@ -150,7 +207,7 @@ h1, h2, h3 {
 }
 
 /* ===========================
-   SOCIAL ICONS + TOOLTIP
+   SOCIAL ICONS
 =========================== */
 .social-icons {
   display: flex;
@@ -172,23 +229,6 @@ h1, h2, h3 {
 .social-icons img {
   width: 22px;
   filter: invert(1);
-}
-
-.social-icons a::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: -36px;
-  background: var(--bg-main);
-  color: var(--title-color);
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.social-icons a:hover::after {
-  opacity: 1;
 }
 
 /* ===========================

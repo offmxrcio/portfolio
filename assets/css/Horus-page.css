@@ -1,0 +1,53 @@
+/* ===========================
+   VARIÁVEIS
+=========================== */
+:root {
+  --bg-main: #020617;
+  --bg-secondary: #000000;
+  --title-color: #ffffff;
+  --text-color: #e5e7eb;
+  --blue: #1e90ff;
+}
+
+body.light {
+  --bg-main: #f8fafc;
+  --bg-secondary: #e5e7eb;
+  --title-color: #020617;
+  --text-color: #020617;
+}
+
+/* ===========================
+   BASE
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(at top left, rgba(30, 144, 255, 0.18), transparent 60%),
+    radial-gradient(at bottom right, rgba(0, 70, 140, 0.25), transparent 55%),
+    linear-gradient(180deg, var(--bg-main), var(--bg-secondary));
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ===========================
+   THEME TOGGLE
+=========================== */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--blue);
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000;
+}
