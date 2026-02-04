@@ -5,98 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólio | Márcio Santos</title>
 
-  <!-- Ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-  <!-- TOGGLE THEME -->
+  <div class="blob"></div>
+
   <button class="theme-toggle" aria-label="Alternar tema">
     <i class="fa-solid fa-moon"></i>
   </button>
 
-  <!-- HEADER -->
   <header class="header reveal">
     <h1>Márcio Santos</h1>
-    <p>Desenvolvedor Front-end | React • JavaScript • Mobile</p>
+    <p>Desenvolvedor Full Stack | React • TypeScript • Mobile</p>
   </header>
 
-  <!-- SOBRE -->
   <section class="section reveal" id="about">
     <div class="about-container">
-    <div class="card about-card">
-      <h2>Sobre mim</h2>
-      <p>
-        🎯 Desenvolvedor em formação com foco em aplicações mobile, web e backend.<br>
-        📱 Apaixonado por tecnologia, projetos práticos e aprendizado contínuo.
-      </p>
-    </div>
+      
+      <div class="card about-card">
+        <h2>Sobre mim</h2>
+        <p>
+          Desenvolvedor focado em criar soluções fluidas para Mobile e Web. 
+          Especialista no ecossistema JavaScript, busco transformar problemas complexos em interfaces intuitivas. 
+          Atualmente, aprofundo meus conhecimentos em arquitetura escalável e UX.
+        </p>
+      </div>
 
-    <div class="card about-tecnology">
-      <h2>Tecnologias</h2>
-      <ul>
-        <li>React Native</li>
-        <li>Expo Router</li>
-        <li>TypeScript</li>
-        <li>Node.js</li>
-        <li>MongoDB</li>
-        <li>Git & GitHub</li>
-        <li>APIs REST</li>
-        <li>Deploy</li>
-        <li>Clean Code</li>
-      </ul>
-    </div>
+      <div class="card about-tecnology">
+        <h2>Tecnologias</h2>
+        <div class="tech-container">
+          <span class="tech-tag">React Native</span>
+          <span class="tech-tag">React JS</span>
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">MongoDB</span>
+          <span class="tech-tag">Expo Router</span>
+          <span class="tech-tag">APIs REST</span>
+          <span class="tech-tag">Git & GitHub</span>
+          <span class="tech-tag">Clean Code</span>
+        </div>
+      </div>
 
-    <div class="card about-anything">
-      <h2>Soft Skills</h2>
-      <ul>
-
-      </ul>
-    </div>
+      <div class="card about-anything">
+        <h2>Soft Skills</h2>
+        <div class="tech-container">
+          <span class="tech-tag">Comunicação Assertiva</span>
+          <span class="tech-tag">Resolução de Problemas</span>
+          <span class="tech-tag">Metodologias Ágeis</span>
+          <span class="tech-tag">Pensamento Analítico</span>
+        </div>
+      </div>
 
     </div>
   </section>
 
-  <!-- PROJETOS -->
-  <section class="section reveal" id="projects">
-    <h2>Projetos</h2>
+  <section class="section reveal" id="projects" style="text-align: center;">
+    <h2 style="font-size: 2.5rem; margin-bottom: 40px;">Projetos</h2>
 
-    <div class="card project-card">
+    <a href="Pages/Horus-page.html" class="card project-card">
+      <img src="assets/img/project-horus/horusNew.png" class="project-logo" alt="Horus Nutrition Logo" />
       <h3>Horus Nutrition</h3>
-      <a href="Pages/Horus-page.html" target="_blank">
-        <img src="assets/img/project-horus/horusNew.png" class="project-logo" />
-      </a>
-    </div>
+      <p style="margin: 15px 0; font-size: 0.9rem; opacity: 0.8;">
+        Aplicativo Full Stack para gestão nutricional e controle de dietas. 
+        Desenvolvido com foco em performance e experiência do usuário.
+      </p>
+      <span style="color: var(--blue); font-weight: 600;">Ver detalhes do projeto →</span>
+    </a>
   </section>
 
-  <!-- CONTATO -->
   <section class="section center contact-section reveal">
     <h2 class="contact-title">Contato</h2>
 
     <div class="social-icons">
-      <a href="mailto:marcioguilherme758@gmail.com" data-tooltip="Email">
+      <a href="mailto:marcioguilherme758@gmail.com" title="Email">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" />
       </a>
 
-      <a href="https://github.com/offmxrcio" target="_blank" data-tooltip="GitHub">
+      <a href="https://github.com/offmxrcio" target="_blank" title="GitHub">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" />
       </a>
 
-      <a href="https://www.linkedin.com/in/márcio-guilherme-017415232/" target="_blank" data-tooltip="LinkedIn">
+      <a href="https://www.linkedin.com/in/márcio-guilherme-017415232/" target="_blank" title="LinkedIn">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" />
       </a>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
-    <p>© 2026 - Márcio Santos</p>
+    <p>© 2026 - Márcio Santos • Desenvolvedor Full Stack</p>
   </footer>
 
-  <!-- JS -->
   <script src="assets/js/script.js"></script>
 </body>
 </html>
